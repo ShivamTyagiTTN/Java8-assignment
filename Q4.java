@@ -30,7 +30,7 @@ interface ConstructorReference {
 public class Q4 {
     public static void main(String[] args) {
 
-        ConstructorReference cf = Employee::new;
-        System.out.println(cf.createEmp("Shivam", 23, "Noida"));
+        ConstructorReference constructorReference = Employee::new;
+        System.out.println(constructorReference.createEmp("Shivam", 23, "Noida"));
     }
 }
