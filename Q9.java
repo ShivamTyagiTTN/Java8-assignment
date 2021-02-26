@@ -6,14 +6,14 @@ import java.util.stream.Collectors;
 public class Q9 {
     public static void main(String[] args) {
 
-        List<Integer> li = (List.of(1, 23, 4, 2, 432, 52));
-        System.out.println(collectEvenNumbers(li));
+        List<Integer> integerList = (List.of(1, 23, 4, 2, 432, 52));
+        System.out.println(collectEvenNumbers(integerList));
     }
 
-    private static List<Integer> collectEvenNumbers(List<Integer> number){
+    private static List<Integer> collectEvenNumbers(List<Integer> numbers){
 
-        return number.stream()
-                .filter(n -> n%2==0)
+        return numbers.stream()
+                .filter(num -> num % 2 == 0)
                 .collect(Collectors.toList());
     }
 }
