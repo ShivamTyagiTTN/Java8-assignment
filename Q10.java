@@ -5,15 +5,15 @@ import java.util.List;
 public class Q10 {
     public static void main(String[] args) {
 
-        List<Integer> li = (List.of(1, 23, 4, 2, 432, 52));
-        System.out.println(sumNumbers(li));
+        List<Integer> integerList = (List.of(1, 23, 4, 2, 432, 52));
+        System.out.println(sumNumbers(integerList));
     }
 
     private static Integer sumNumbers(List<Integer> number){
 
         return number.stream()
-                .filter(x -> x > 5)
-                .reduce(0, (x,y) -> x+y);
+                .filter(num -> num > 5)
+                .reduce(0, Integer::sum);
     }
 }
 
