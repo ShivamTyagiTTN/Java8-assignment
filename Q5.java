@@ -19,27 +19,27 @@ import java.util.function.Supplier;
 class Q5 {
     public static void main(String[] args) {
 
-        List<Integer> numli = List.of(2, 4, 45, 21, 4, 2, 3, 1);
+        List<Integer> integerList = List.of(2, 4, 45, 21, 4, 2, 3, 1);
 
-        calculate(numli);
+        printEvenSquare(integerList);
 
     }
 
-    private static void calculate(List<Integer> num) {
+    private static void printEvenSquare(List<Integer> numbers) {
 
-        Consumer<Integer> consumer = x -> System.out.println(x);
+        Consumer<Integer> printConsumer = num -> System.out.println(num);
 
-        Supplier<Integer> supplier = () -> { Random r = new Random(); return r.nextInt(100); };
+        Supplier<Integer> randomSupplier = () -> { Random random = new Random(); return random.nextInt(100); };
 
-        Predicate<Integer> isEvenPredicate = x -> x % 2 == 0;
+        Predicate<Integer> isEvenPredicate = num -> num % 2 == 0;
 
-        Function<Integer, Integer> squareFunction = x -> x * x;
+        Function<Integer, Integer> squareFunction = num -> num * num;
 
 
-        System.out.println("Random number : "+ supplier.get());
+        System.out.println("Random number : "+ randomSupplier.get());
 
         System.out.println("New List: ");
-        num.stream().filter(isEvenPredicate).map(squareFunction).forEach(consumer);
+        numbers.stream().filter(isEvenPredicate).map(squareFunction).forEach(printConsumer);
     }
 }
 
