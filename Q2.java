@@ -6,13 +6,13 @@ interface AdditionInterface
 }
 public class Q2
 {
-    int addition(int a, int b) {
-        return a + b;
+    int addition(int firstNumber, int secondNumber) {
+        return firstNumber + secondNumber;
     }
     public static void main(String[] args)
     {
-        AdditionInterface res = new Q2()::addition;
-        int result = res.sum(20,30);
+        AdditionInterface additionInterface = new Q2()::addition;
+        int result = additionInterface.sum(20,30);
 
         System.out.println("Sum: "+result);
     }
