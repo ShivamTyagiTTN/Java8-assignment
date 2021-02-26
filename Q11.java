@@ -7,15 +7,15 @@ import java.util.stream.Collectors;
 public class Q11 {
     public static void main(String[] args) {
 
-        List<Integer> li = (List.of(2, 23, 4, 2, 43, 52));
-        System.out.println(avgNumbers(li));
+        List<Integer> integerList = (List.of(2, 23, 4, 2, 43, 52));
+        System.out.println(avgNumbers(integerList));
     }
 
-    private static Double avgNumbers(List<Integer> number){
+    private static int avgNumbers(List<Integer> number){
 
-        return number.stream()
-                .map(x -> x+x)
-                .collect(Collectors.averagingInt(x -> x));
+        return (int)Math.round(number.stream()
+                .map(num -> num + num)
+                .collect(Collectors.averagingInt(num -> num)));
     }
 }
 
