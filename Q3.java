@@ -1,40 +1,43 @@
-//Q3 Using (instance) Method reference create and apply add and subtract method and using (Static) Method reference create and apply multiplication method for the functional interface created.
-
+/*
+Q3 Using (instance) Method reference create and apply add and subtract method
+ and using (Static) Method reference create and apply multiplication method for the functional interface created.
+*/
 
 
 interface NewInterface
 {
-    int apply(int a, int b);
+    int apply(int one, int two);
 }
+
 public class Q3
 {
-    public int add(int x, int y)
+    public int add(int firstNumber, int secondNumber)
     {
-        return x + y;
+        return firstNumber + secondNumber;
     }
 
-    public int sub(int x, int y)
+    public int subtract(int firstNumber, int secondNumber)
     {
-        return x - y;
+        return firstNumber - secondNumber;
     }
 
-    public static int mul(int x, int y)
+    public static int multiply(int firstNumber, int secondNumber)
     {
-        return x * y;
+        return firstNumber * secondNumber;
     }
 
     public static void main(String[] args)
     {
         //instance method reference
-        NewInterface o1 = new Q3()::add;
-        System.out.println("Addition: "+ o1.apply(30,20));
+        NewInterface newInterfaceObj1 = new Q3()::add;
+        System.out.println("Addition: "+ newInterfaceObj1.apply(30,20));
 
-        NewInterface o2 = new Q3()::sub;
-        System.out.println("Subtraction: "+ o2.apply(30,20));
+        NewInterface newInterfaceObj2 = new Q3()::subtract;
+        System.out.println("Subtraction: "+ newInterfaceObj2.apply(30,20));
 
         //static method reference
-        NewInterface o3 = Q3::mul;
-        System.out.println("Multiplication: "+ o3.apply(30,20));
+        NewInterface newInterfaceObj3 = Q3::multiply;
+        System.out.println("Multiplication: "+ newInterfaceObj3.apply(30,20));
     }
 }
 
