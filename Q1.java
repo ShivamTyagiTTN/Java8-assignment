@@ -9,34 +9,34 @@ Q1 Write the following a functional interface and implement it using lambda:
 
 
 interface GreaterNumber {
-    Boolean returnGreater(int a, int b);
+    Boolean returnGreater(int inputInteger1, int inputInteger2);
 }
 
 interface Increment {
-    int incrementNum(int a);
+    int incrementNum(int inputInteger);
 }
 
 interface ConcatString {
-    String concatString(String s1, String s2);
+    String concatString(String firstString, String secondString);
 }
 
 interface ToUppercaseString {
-    String upperString(String s1);
+    String upperString(String inputString);
 }
 
 class Q1{
     public static void main(String[] args) {
 
-        GreaterNumber greaterNumber = (a, b) -> a > b;
+        GreaterNumber greaterNumber = (first, second) -> first > second;
         System.out.println("Is Greater number : "+greaterNumber.returnGreater(8, 7));
 
-        Increment increment = (a) -> ++a;
+        Increment increment = (inputNumber) -> ++inputNumber;
         System.out.println("Incremented value : "+increment.incrementNum(9));
 
-        ConcatString concatString = (s1, s2) -> s1 + " " + s2;
+        ConcatString concatString = (firstString, secondString) -> firstString + " " + secondString;
         System.out.println("Concatenated String : "+concatString.concatString("Hello", "World"));
 
-        ToUppercaseString toUppercaseString = (s1) -> s1.toUpperCase();
+        ToUppercaseString toUppercaseString = (inputString) -> inputString.toUpperCase();
         System.out.println("To uppercase : "+toUppercaseString.upperString("Shivam"));
 
     }
