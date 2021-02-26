@@ -6,15 +6,15 @@ import java.util.List;
 public class Q12 {
     public static void main(String[] args) {
 
-        List<Integer> li = (List.of(1, 23, 4, 2, 432, 52));
-        System.out.println(sumNumbers(li));
+        List<Integer> integerList = (List.of(1, 23, 4, 2, 432, 52));
+        System.out.println(findFirstEvenGreaterThanThree(integerList));
     }
 
-    private static Integer sumNumbers(List<Integer> number){
+    private static Integer findFirstEvenGreaterThanThree(List<Integer> numbers){
 
-        return number.stream()
-                .filter(x -> x > 3)
-                .filter(x -> x%2==0)
+        return numbers.stream()
+                .filter(num -> num > 3)
+                .filter(num -> num % 2 == 0)
                 .findFirst()
                 .get();
     }
